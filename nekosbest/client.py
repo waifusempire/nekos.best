@@ -14,7 +14,7 @@ class AsyncClient:
         self.__session = None
 
     def create_session(self):
-        self.__session = aiohttp.ClientSession(self.__url, headers=AIOHTTP_HEADERS)
+        self.__session = aiohttp.ClientSession(headers=AIOHTTP_HEADERS)
         self.__closed = False
 
     async def close_session(self):
@@ -38,7 +38,7 @@ class AsyncClient:
 
         params = {"amount": amount} if amount > 1 else {}
 
-        async with self.__session.get(f"/{endpoint}", params=params) as response:
+        async with self.__session.get(f"{self.__url}/{endpoint}", params=params) as response:
             if response.status == 404:
                 raise NotFoundError
             elif not response.ok:
