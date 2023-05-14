@@ -73,7 +73,7 @@ class Client:
         self.__closed = True
 
     def __enter__(self):
-        self.close_session()
+        self.create_session()
         return self
     
     def __exit__(self, *err):

@@ -2,8 +2,8 @@ from sys import version_info as python_version_info
 from aiohttp import __version__ as aiohttp_version
 from requests import __version__ as requests_version
 
+from . import __version__
 
-__version__ = "0.1.0"
 __author__ = "waifusempire"
 
 
