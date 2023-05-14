@@ -25,7 +25,7 @@ class AsyncClient:
         self.create_session()
         return self
     
-    async def __aexit__(self):
+    async def __aexit__(self, *err):
         await self.close_session()
 
     @property
