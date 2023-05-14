@@ -1,0 +1,23 @@
+[project]
+name = "nekos.best"
+version = "0.1.0"
+description = "Simple wrapper around the nekos.best api, supports sync and async envs"
+authors = [{ name = "waifusempire", email = "waifusempire@protonmail.com" }]
+dependencies = [
+    "aiohttp",
+    "requests",
+    'importlib-metadata; python_version<"3.8"'
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+include = ["nekosbest", "LICENSE"]
+namespaces = false
+
